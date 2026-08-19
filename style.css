@@ -783,18 +783,16 @@ header.scrolled {
 
 .showcase-item {
   flex-shrink: 0;
-  width: 30vw;
+  width: 42vh;
   height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .showcase-img-container {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   height: 80%;
   overflow: hidden;
@@ -803,7 +801,7 @@ header.scrolled {
 .showcase-img-container img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   transition: transform var(--transition-smooth);
 }
 
@@ -814,7 +812,7 @@ header.scrolled {
 .showcase-details {
   position: relative;
   z-index: 2;
-  margin-top: calc(70vh * 0.83);
+  margin-top: 1.5rem;
   color: var(--text-primary);
   display: flex;
   flex-direction: column;
