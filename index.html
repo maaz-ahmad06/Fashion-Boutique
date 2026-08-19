@@ -44,8 +44,8 @@
     </button>
     <ul class="nav-links" id="nav-menu">
       <li><a href="#hero-section">Home</a></li>
-      <li><a href="#about">Story</a></li>
       <li><a href="#collections">Collections</a></li>
+      <li><a href="#about">Story</a></li>
       <li><a href="#featured">Featured</a></li>
       <li><a href="#lookbook">Lookbook</a></li>
     </ul>
@@ -55,8 +55,8 @@
     </div>
 
     <ul class="nav-actions">
-      <li><a href="#" aria-label="Search Collection">Search</a></li>
-      <li><a href="#" aria-label="View Shopping Cart">Cart (0)</a></li>
+      <li><a href="javascript:void(0)" id="search-trigger" aria-label="Search Collection">Search</a></li>
+      <li><a href="javascript:void(0)" id="cart-trigger" aria-label="View Shopping Cart">Cart (0)</a></li>
     </ul>
   </header>
 
@@ -82,33 +82,6 @@
     <div class="scroll-indicator" id="scroll-prompt">
       <span>Scroll to Begin</span>
       <div class="scroll-indicator-line"></div>
-    </div>
-  </section>
-
-  <!-- ================= ABOUT / BRAND STORY ================= -->
-  <section class="about" id="about">
-    <div class="about-grid">
-      <div class="about-text-column">
-        <span class="section-tag">VALOIR ORIGINS</span>
-        <h2 class="about-heading">An Editorial In <span>Tailoring</span></h2>
-        <p class="about-desc">
-          Founded on the philosophy of quiet luxury and architectural shapes, VALOIR constructs premium statements for
-          the modern wardrobe. Every fabric is sourced responsibly, and every seam is deliberate.
-        </p>
-        <p class="about-quote">
-          "Luxury is not about being noticed, it is about being remembered in your truest, most effortless form."
-        </p>
-        <a href="#collections" class="btn-valoir">Read Our Story</a>
-      </div>
-
-      <div class="about-images-column" id="about-images-container">
-        <div class="about-image-wrapper about-img-main" id="about-img-main-wrap">
-          <img src="assets/images/about_arch.jpg" alt="Model standing in neutral plaster arches" id="about-main-image">
-        </div>
-        <div class="about-image-wrapper about-img-sub" id="about-img-sub-wrap">
-          <img src="assets/images/featured_1.jpg" alt="Cream silk dress detailed drape" id="about-sub-image">
-        </div>
-      </div>
     </div>
   </section>
 
@@ -177,6 +150,33 @@
           <span class="product-category">EVENING // SATIN</span>
           <h3 class="product-title">Draped Satin Evening Dress</h3>
           <span class="product-price">$450.00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT / BRAND STORY ================= -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-text-column">
+        <span class="section-tag">VALOIR ORIGINS</span>
+        <h2 class="about-heading">An Editorial In <span>Tailoring</span></h2>
+        <p class="about-desc">
+          Founded on the philosophy of quiet luxury and architectural shapes, VALOIR constructs premium statements for
+          the modern wardrobe. Every fabric is sourced responsibly, and every seam is deliberate.
+        </p>
+        <p class="about-quote">
+          "Luxury is not about being noticed, it is about being remembered in your truest, most effortless form."
+        </p>
+        <a href="#collections" class="btn-valoir">Read Our Story</a>
+      </div>
+
+      <div class="about-images-column" id="about-images-container">
+        <div class="about-image-wrapper about-img-main" id="about-img-main-wrap">
+          <img src="assets/images/about_arch.jpg" alt="Model standing in neutral plaster arches" id="about-main-image">
+        </div>
+        <div class="about-image-wrapper about-img-sub" id="about-img-sub-wrap">
+          <img src="assets/images/featured_1.jpg" alt="Cream silk dress detailed drape" id="about-sub-image">
         </div>
       </div>
     </div>
@@ -444,6 +444,32 @@
       </ul>
     </div>
   </footer>
+
+  <!-- ================= SEARCH OVERLAY ================= -->
+  <div id="search-overlay" class="search-overlay">
+    <button class="search-close" id="search-close-btn" aria-label="Close Search">&times;</button>
+    <div class="search-container">
+      <form class="search-form" onsubmit="event.preventDefault(); alert('Search results for: ' + document.getElementById('search-input').value);">
+        <input type="text" id="search-input" class="search-input" placeholder="Search Valoir..." autocomplete="off">
+        <button type="submit" class="search-submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= CART SIDEBAR DRAWER ================= -->
+  <div id="cart-drawer" class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Bag (0)</h3>
+      <button class="cart-close" id="cart-close-btn" aria-label="Close Cart">&times;</button>
+    </div>
+    <div class="cart-drawer-body">
+      <p class="empty-cart-msg">Your shopping bag is empty.</p>
+    </div>
+    <div class="cart-drawer-footer">
+      <button class="btn-valoir btn-valoir-dark btn-checkout">Proceed to Checkout</button>
+    </div>
+  </div>
+  <div id="cart-overlay" class="cart-overlay"></div>
 
   <!-- ================= SCRIPT IMPORTS ================= -->
   <!-- GSAP & ScrollTrigger -->

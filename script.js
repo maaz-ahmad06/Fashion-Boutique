@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTestimonials();
   initNewsletterReveal();
   initMobileMenu();
+  initSearchAndCart();
 });
 
 /* --- 1. Smooth Scroll (Lenis) --- */
@@ -492,4 +493,57 @@ function initMobileMenu() {
       if (lenis) lenis.start();
     });
   });
+}
+
+/* --- 12. Search Overlay & Cart Drawer Logic --- */
+function initSearchAndCart() {
+  const searchOverlay = document.getElementById("search-overlay");
+  const searchTrigger = document.getElementById("search-trigger");
+  const searchClose = document.getElementById("search-close-btn");
+  const searchInput = document.getElementById("search-input");
+
+  if (searchTrigger && searchOverlay) {
+    searchTrigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      searchOverlay.classList.add("active");
+      if (lenis) lenis.stop();
+      if (searchInput) {
+        setTimeout(() => searchInput.focus(), 300);
+      }
+    });
+  }
+
+  if (searchClose && searchOverlay) {
+    searchClose.addEventListener("click", () => {
+      searchOverlay.classList.remove("active");
+      if (lenis) lenis.start();
+    });
+  }
+
+  const cartTrigger = document.getElementById("cart-trigger");
+  const cartDrawer = document.getElementById("cart-drawer");
+  const cartClose = document.getElementById("cart-close-btn");
+  const cartOverlay = document.getElementById("cart-overlay");
+
+  if (cartTrigger && cartDrawer && cartOverlay) {
+    cartTrigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      cartDrawer.classList.add("active");
+      cartOverlay.classList.add("active");
+      if (lenis) lenis.stop();
+    });
+  }
+
+  const closeCart = () => {
+    if (cartDrawer) cartDrawer.classList.remove("active");
+    if (cartOverlay) cartOverlay.classList.remove("active");
+    if (lenis) lenis.start();
+  };
+
+  if (cartClose) {
+    cartClose.addEventListener("click", closeCart);
+  }
+  if (cartOverlay) {
+    cartOverlay.addEventListener("click", closeCart);
+  }
 }
