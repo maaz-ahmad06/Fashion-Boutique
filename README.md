@@ -1,4 +1,4 @@
-# VALOIR — Premium Luxury Fashion Boutique
+# Premium Luxury Fashion Boutique
 
 A complete, modern, and visually stunning frontend website for a high-fashion boutique. Modeled with an editorial design aesthetic inspired by luxury brand publications, the project uses **GSAP (GreenSock)**, **ScrollTrigger**, and **Lenis** to create buttery, cinematic scroll-linked storytelling experiences.
 
