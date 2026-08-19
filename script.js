@@ -335,9 +335,9 @@ function initHorizontalScroll() {
   const showcaseImgs = gsap.utils.toArray(".showcase-img-container img");
   showcaseImgs.forEach((img) => {
     gsap.fromTo(img, {
-      xPercent: -8
+      xPercent: -2
     }, {
-      xPercent: 8,
+      xPercent: 2,
       ease: "none",
       scrollTrigger: {
         trigger: img.closest(".showcase-item"),

@@ -104,7 +104,7 @@ a {
 img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -654,7 +654,7 @@ header.scrolled {
   overflow: hidden;
   position: relative;
   margin-bottom: 1.5rem;
-  background-color: #E2DBD0;
+  background-color: var(--bg-primary);
 }
 
 .product-image-container img {
@@ -728,7 +728,7 @@ header.scrolled {
 .featured-showcase-pin {
   overflow: hidden;
   position: relative;
-  background-color: var(--bg-dark);
+  background-color: var(--bg-secondary);
 }
 
 .featured-track-wrapper {
@@ -746,7 +746,7 @@ header.scrolled {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: var(--text-light);
+  color: var(--text-primary);
 }
 
 .featured-title-slide .section-tag {
@@ -766,7 +766,7 @@ header.scrolled {
 }
 
 .featured-title-slide p {
-  color: var(--text-light-secondary);
+  color: var(--text-secondary);
   margin: 2rem 0;
   font-weight: 300;
   font-size: 1rem;
@@ -803,7 +803,7 @@ header.scrolled {
 .showcase-img-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform var(--transition-smooth);
 }
 
@@ -815,7 +815,7 @@ header.scrolled {
   position: relative;
   z-index: 2;
   margin-top: calc(70vh * 0.83);
-  color: var(--text-light);
+  color: var(--text-primary);
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -839,7 +839,7 @@ header.scrolled {
 .showcase-desc {
   font-family: var(--font-sans);
   font-size: 0.8rem;
-  color: var(--text-light-secondary);
+  color: var(--text-secondary);
   letter-spacing: 0.05em;
 }
 
@@ -874,12 +874,12 @@ header.scrolled {
 .lookbook-item {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 3/4.5;
+  aspect-ratio: 3/4;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
 }
 
 .lookbook-item.landscape {
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/4;
 }
 
 .lookbook-item img {
